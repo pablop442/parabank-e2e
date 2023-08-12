@@ -1,0 +1,14 @@
+{
+  "correct_user": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "user_name": "johndoe",
+    "password": "1234"
+  },
+  "incorrect_user": {
+    "first_name": "Peter",
+    "last_name": "Pan",
+    "user_name": "PeterP",
+    "password": "incorrect"
+  }
+}
