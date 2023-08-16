@@ -1,9 +1,9 @@
 {
   "correct_user": {
     "first_name": "John",
-    "last_name": "Doe",
-    "user_name": "johndoe",
-    "password": "1234"
+    "last_name": "Smith",
+    "user_name": "john",
+    "password": "demo"
   },
   "incorrect_user": {
     "first_name": "Peter",
