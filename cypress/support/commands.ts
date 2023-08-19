@@ -1,3 +1,32 @@
+import RegisterPage from "../integration/pageObject/RegisterPage";
+
+
+const registerPage = new RegisterPage();
+
+Cypress.Commands.add("userRegister", (
+    firstName: string,
+    lastName: string,
+    address: string,
+    city: string,
+    state: string,
+    zipCode: string,
+    phone: string,
+    userName: string,
+    ssn?: number,
+    password?: string
+) => {
+    registerPage.getFirstNameInput().type(firstName);
+    registerPage.getLastNameInput().type(lastName);
+    registerPage.getAddressInput().type(address);
+    registerPage.getCityInput().type(city);
+    registerPage.getStateInput().type(state);
+    registerPage.getZipCodeInput().type(zipCode);
+    registerPage.getPhoneInput().type(phone);
+    registerPage.getSSNInput().type(ssn.toString());
+    registerPage.getUserNameInput().type(userName);
+    registerPage.getPasswordInput().type(password);
+    registerPage.getConfirmPasswordInput().type(password);
+})
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite

@@ -46,6 +46,18 @@ class RegisterPage {
     getRegisterButton(): Cypress.Chainable<JQuery<HTMLButtonElement>>{
         return cy.get('[colspan="2"] > .button')
     }
+
+    getMissingSSNError(): Cypress.Chainable<JQuery<HTMLInputElement>>{
+        return cy.get('#customer\.ssn\.errors')
+    }
+
+    getMissingPasswordError(): Cypress.Chainable<JQuery<HTMLInputElement>>{
+        return cy.get('#customer\.password\.errors')
+    }
+
+    getMissingConfirmPasswordError(): Cypress.Chainable<JQuery<HTMLInputElement>>{
+        return cy.get('#repeatedPassword\.errors')
+    }
    
 }
 
