@@ -1,7 +1,6 @@
 import { defineConfig } from "cypress";
 import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
-// @ts-ignore
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
 
 async function setupNodeEvents(

@@ -12,12 +12,12 @@
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@faker-js/faker": "^8.0.2",
-    "cypress": "^12.17.3",
-    "esbuild": "^0.18.18",
+    "cypress": "^12.17.4",
+    "esbuild": "^0.25.0",
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^18.0.2",
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
     "@cypress/browserify-preprocessor": "^3.0.2"
   }
 }
