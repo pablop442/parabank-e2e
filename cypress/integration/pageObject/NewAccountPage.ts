@@ -26,6 +26,11 @@ class NewAccountPage {
     getAccountIdDropdown(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get('#fromAccountId')
     }
+    getAccountDetailsBalance(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get('#balance')
+    }
+    
+
 
 
 }

@@ -8,7 +8,8 @@ const homePage = new HomePage();
 const profileMainPage = new ProfileMainPage
 const newAccountPage = new NewAccountPage();
 
-const successNewAccountMessage: string = 'Account Opened!'
+const successNewAccountMessage: string = 'Account Opened!';
+const defaultAccountBalance: string = '$100.00'
 
 beforeEach(function () {
     cy.fixture('users.json').as('users');
@@ -55,20 +56,35 @@ When('I open a new Savings account', function() {
     .should('be.visible')
     .invoke('text')
     .then((newAccountId)=>{
-        cy.log(`Account ID: ${newAccountId}`);
         cy.wrap(newAccountId).as('newAccountId')
     })   
 })
 
-Then('I see a new account created in my accounts overview', function(){
+Then('I see a new account created in my accounts overview page', function(){
     cy.get('@newAccountId').then((newAccountId)=>{
       const accountIdString = String(newAccountId);
 
       newAccountPage.getAccountOverviewLink().click();
-      cy.log(`Account ID: ${newAccountId}`);
 
       newAccountPage.getAccountNumberColumn()
       .contains(accountIdString)
       .should('be.visible'); 
     })  
+})
+
+Then('I see a new account details with correct balance', function(){
+  cy.get('@newAccountId').then((newAccountId)=>{
+    const accountIdString = String(newAccountId);
+
+    newAccountPage.getAccountOverviewLink().click();
+    cy.log(`Account ID: ${newAccountId}`);
+
+    newAccountPage.getAccountNumberColumn()
+    .contains(accountIdString)
+    .should('be.visible')
+    .click(); 
+  })  
+
+  newAccountPage.getAccountDetailsBalance()
+  .should('contain.text', defaultAccountBalance);
 })
