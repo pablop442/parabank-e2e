@@ -11,8 +11,8 @@ class NewAccountPage {
     getTypeSavingsOption(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get('option[value="1"]')
     }
-    getAccountOverviewLink(): Cypress.Chainable<JQuery<HTMLInputElement>> {
-        return cy.get('#leftPanel > ul > :nth-child(2) > a')
+    getAccountOverviewLink(): Cypress.Chainable<JQuery<HTMLElement>> {
+        return cy.get('#leftPanel > ul > li > a').contains('Accounts Overview');
     }
     getAccountOpenedMessage(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get('#openAccountResult > .title')

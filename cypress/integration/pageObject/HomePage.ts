@@ -14,8 +14,11 @@ class HomePage {
     getRegisterButton(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get('#loginPanel > :nth-child(3) > a')
     }
-    getOpenNewAccountLink(): Cypress.Chainable<JQuery<HTMLInputElement>>{
-        return cy.get('#leftPanel > ul > :nth-child(1) > a')
+    getOpenNewAccountLink(): Cypress.Chainable<JQuery<HTMLElement>>{
+        return cy.get('#leftPanel > ul > li > a').contains('Open New Account');
+    }
+    getTransferFundsLink(): Cypress.Chainable<JQuery<HTMLElement>>{
+        return cy.get('#leftPanel > ul > li > a').contains('Transfer Funds');
     }
 }
 
